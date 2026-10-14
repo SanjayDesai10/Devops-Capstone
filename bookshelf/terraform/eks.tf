@@ -89,6 +89,7 @@ resource "aws_eks_node_group" "main" {
   subnet_ids      = aws_subnet.public[*].id
 
   instance_types = [var.eks_node_instance_type]
+  ami_type       = "AL2023_x86_64_STANDARD"
 
   scaling_config {
     desired_size = var.eks_desired_capacity
