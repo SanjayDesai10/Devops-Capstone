@@ -1,0 +1,37 @@
+# ============================================
+# BookShelf Helm Values
+# ============================================
+
+namespace: bookshelf
+
+# --- Backend ---
+backend:
+  image: ghcr.io/YOUR_GITHUB_USERNAME/bookshelf-backend
+  tag: latest  # Replace with actual commit SHA after CI/CD run
+  replicas: 2
+  port: 8000
+  env:
+    DATABASE_URL: postgresql://bookshelf:bookshelf@bookshelf-postgres:5432/bookshelf
+
+# --- Frontend ---
+frontend:
+  image: ghcr.io/YOUR_GITHUB_USERNAME/bookshelf-frontend
+  tag: latest  # Replace with actual commit SHA after CI/CD run
+  replicas: 2
+  port: 3000
+
+# --- PostgreSQL ---
+postgres:
+  image: postgres:16-alpine
+  port: 5432
+  env:
+    POSTGRES_USER: bookshelf
+    POSTGRES_PASSWORD: bookshelf
+    POSTGRES_DB: bookshelf
+  storage: 5Gi
+
+# --- Ingress ---
+ingress:
+  enabled: true
+  className: nginx
+  host: bookshelf.local

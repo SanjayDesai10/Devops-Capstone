@@ -1,0 +1,31 @@
+{{- if .Values.ingress.enabled }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: bookshelf-ingress
+  namespace: {{ .Values.namespace }}
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  ingressClassName: {{ .Values.ingress.className }}
+  rules:
+    - host: {{ .Values.ingress.host }}
+      http:
+        paths:
+          # /api/* → backend service
+          - path: /api(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: bookshelf-backend
+                port:
+                  number: {{ .Values.backend.port }}
+          # /* → frontend service
+          - path: /(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: bookshelf-frontend
+                port:
+                  number: {{ .Values.frontend.port }}
+{{- end }}
