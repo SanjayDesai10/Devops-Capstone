@@ -32,7 +32,7 @@ resource "aws_iam_role_policy_attachment" "eks_vpc_controller" {
 resource "aws_eks_cluster" "main" {
   name     = "${var.project_name}-eks"
   role_arn = aws_iam_role.eks_cluster.arn
-  version  = "1.29"
+  version  = "1.30"
 
   vpc_config {
     subnet_ids              = aws_subnet.public[*].id
