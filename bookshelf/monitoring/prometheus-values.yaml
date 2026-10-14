@@ -1,0 +1,22 @@
+# Prometheus Helm values for BookShelf monitoring
+# Install: helm install prometheus prometheus-community/prometheus -n bookshelf -f prometheus-values.yaml
+
+server:
+  persistentVolume:
+    enabled: false
+
+alertmanager:
+  enabled: false
+
+pushgateway:
+  enabled: false
+
+# Scrape config to discover the BookShelf backend /metrics endpoint
+serverFiles:
+  prometheus.yml:
+    scrape_configs:
+      - job_name: "bookshelf-backend"
+        scrape_interval: 15s
+        static_configs:
+          - targets: ["bookshelf-backend:8000"]
+        metrics_path: /metrics
