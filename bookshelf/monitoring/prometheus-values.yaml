@@ -11,6 +11,12 @@ alertmanager:
 pushgateway:
   enabled: false
 
+kube-state-metrics:
+  enabled: false
+
+prometheus-node-exporter:
+  enabled: false
+
 # Scrape config to discover the BookShelf backend /metrics endpoint
 serverFiles:
   prometheus.yml:
