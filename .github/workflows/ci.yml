@@ -112,18 +112,18 @@ jobs:
 
       - name: Trivy scan — backend image
         uses: aquasecurity/trivy-action@master
-        continue-on-error: true
         with:
           image-ref: ${{ env.REGISTRY }}/${{ env.REPO_LOWER }}/bookshelf-backend:${{ github.sha }}
           format: table
-          exit-code: "0"
+          exit-code: "1"
+          ignore-unfixed: true
           severity: HIGH,CRITICAL
 
       - name: Trivy scan — frontend image
         uses: aquasecurity/trivy-action@master
-        continue-on-error: true
         with:
           image-ref: ${{ env.REGISTRY }}/${{ env.REPO_LOWER }}/bookshelf-frontend:${{ github.sha }}
           format: table
-          exit-code: "0"
+          exit-code: "1"
+          ignore-unfixed: true
           severity: HIGH,CRITICAL
