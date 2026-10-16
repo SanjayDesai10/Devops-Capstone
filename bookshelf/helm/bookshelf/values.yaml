@@ -8,7 +8,7 @@ namespace: bookshelf
 backend:
   image: ghcr.io/sanjaydesai10/devops-capstone/bookshelf-backend
   tag: "27d1fe24a54d5c9a67ea2ae7d615eb1add00dd1f"
-  replicas: 1
+  replicas: 2
   port: 8000
   env:
     DATABASE_URL: postgresql://bookshelf:bookshelf@bookshelf-postgres:5432/bookshelf
@@ -17,7 +17,7 @@ backend:
 frontend:
   image: ghcr.io/sanjaydesai10/devops-capstone/bookshelf-frontend
   tag: "27d1fe24a54d5c9a67ea2ae7d615eb1add00dd1f"
-  replicas: 1
+  replicas: 2
   port: 3000
 
 # --- PostgreSQL ---
