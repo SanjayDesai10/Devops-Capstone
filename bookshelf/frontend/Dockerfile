@@ -8,7 +8,10 @@ COPY . .
 RUN npm run build
 
 # ── Stage 2: Serve with Nginx ──
-FROM nginx:1.27-alpine
+FROM nginx:1.30-alpine
+
+# Pull in Alpine security patches released after the base image was built
+RUN apk upgrade --no-cache
 
 # Create non-root user (M4 requirement)
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
