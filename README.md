@@ -7,6 +7,7 @@ Target AWS Region: `ap-south-1` (Mumbai) | AWS EKS Cluster: `bookshelf-eks` (v1.
 
 ---
 
+
 ## Table of Contents
 1. [Project Overview](#1-project-overview)
 2. [Architecture Diagram](#2-architecture-diagram)
