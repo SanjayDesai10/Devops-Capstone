@@ -5,8 +5,10 @@ A production-grade, secure, cloud-native DevOps lifecycle implementation for **B
 Repository: [github.com/SanjayDesai10/Devops-Capstone](https://github.com/SanjayDesai10/Devops-Capstone)  
 Target AWS Region: `ap-south-1` (Mumbai) | AWS EKS Cluster: `bookshelf-eks` (v1.30)
 
-### 🎥 Demonstration Walkthrough Video
+### 🎥 Demonstration Walkthrough Video & Presentation
 - **Recorded Demo Walkthrough (Loom):** [https://www.loom.com/share/a1519f093a9d4a1ea19ca2fed6bfbb64](https://www.loom.com/share/a1519f093a9d4a1ea19ca2fed6bfbb64)  
+- **Presentation Slides (PPTX):** [Demo/bookshelf.pptx](Demo/bookshelf.pptx)  
+- **Demo Assets Folder:** [Demo/](Demo/)  
 
 ---
 
