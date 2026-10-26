@@ -7,8 +7,8 @@ Target AWS Region: `ap-south-1` (Mumbai) | AWS EKS Cluster: `bookshelf-eks` (v1.
 
 ### 🎥 Demonstration Walkthrough Video & Presentation
 - **Recorded Demo Walkthrough (Loom):** [https://www.loom.com/share/a1519f093a9d4a1ea19ca2fed6bfbb64](https://www.loom.com/share/a1519f093a9d4a1ea19ca2fed6bfbb64)  
-- **Presentation Slides (PPTX):** [Demo/bookshelf.pptx](Demo/bookshelf.pptx)  
-- **Demo Assets Folder:** [Demo/](Demo/)  
+- **Presentation Slides (PPTX):** [demo/bookshelf.pptx](demo/bookshelf.pptx)  
+- **Demo Assets Folder:** [demo/](demo/)  
 
 ---
 
